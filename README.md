@@ -1,8 +1,8 @@
 # T3 App
 
 ## todo
-- [ ] Make it Deploy
-- [ ] Scaffold basic UI with mock data
+- [x] Make it Deploy
+- [x] Scaffold basic UI with mock data
 - [ ] Actually set up a Database
 - [ ] Attach Database to the app
 - [ ] Add Authentication
