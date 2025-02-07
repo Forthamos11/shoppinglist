@@ -2,6 +2,7 @@
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
 import { sql } from "drizzle-orm";
+import { float } from "drizzle-orm/mysql-core";
 import {
   index,
   integer,
@@ -18,11 +19,15 @@ import {
  */
 export const createTable = pgTableCreator((name) => `shoppinglist_${name}`);
 
-export const posts = createTable(
-  "post",
+export const items = createTable(
+  "item",
   {
     id: integer("id").primaryKey().generatedByDefaultAsIdentity(),
-    name: varchar("name", { length: 256 }),
+    name: varchar("name", { length: 256 }).notNull(),
+    calories: integer("calories").notNull(),
+    fat: integer("fat").notNull(),
+    carbs: integer("carbs").notNull(),
+    protein: integer("protein").notNull(),
     createdAt: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),

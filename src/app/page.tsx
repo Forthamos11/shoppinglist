@@ -9,20 +9,24 @@ const Mockdata = MockItems.map((item, index) => ({
 }));
 export default async function HomePage() {
   
-  const posts = await db.query.posts.findMany();
+  const posts = await db.query.items.findMany({
+    orderBy: (model, { asc }) => asc(model.name),
+  });
   console.log(posts);
 
   return (
     <main>
       <div className="flex flex-col gap-4">
         {posts.map((post) => (
-          <div key={post.id}>{post.name}</div>
-        ))}
-        {Mockdata.map((Mockdata) => (
-          <li key={Mockdata.id}>
-            <ul>{Mockdata.name}</ul>
+          <div key={post.id}>{post.name} (100g)
+          <li key={post.id}>
+            <ul>Calories: {post.calories}</ul>
+            <ul>Fat: {post.fat}</ul>
+            <ul>Carbs: {post.carbs}</ul>
+            <ul>Protein: {post.protein}</ul>
           </li>
-        ))}
+          </div>
+        ))} 
       </div>
     </main>
   );
