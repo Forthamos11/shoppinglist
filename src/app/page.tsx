@@ -12,7 +12,7 @@ export default async function HomePage() {
   const posts = await db.query.items.findMany({
     orderBy: (model, { asc }) => asc(model.name),
   });
-  console.log(posts);
+  // console.log(posts);
 
   return (
     <main>
