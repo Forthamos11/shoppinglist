@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { db } from "~/server/db";
+
+export const dynamic = "force-dynamic";
 
 const MockItems = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
 const Mockdata = MockItems.map((item, index) => ({
