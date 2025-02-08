@@ -34,6 +34,7 @@ export const items = createTable(
     updatedAt: timestamp("updated_at", { withTimezone: true }).$onUpdate(
       () => new Date()
     ),
+    userId: varchar("userId", { length: 256 }).notNull(),
   },
   (example) => ({
     nameIndex: index("name_idx").on(example.name),

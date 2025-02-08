@@ -6,7 +6,7 @@
 - [x] Actually set up a Database
 - [x] Attach Database to the app
 - [x] Add Authentication (w/ clerk)
-- [ ] Rounting/Nutrition Page
+- [x] Routing/Nutrition Page
 - [ ] Delete Button (server Actions)
 - [ ] barcode support
 - [ ] get food data from api (w/ food-api)
